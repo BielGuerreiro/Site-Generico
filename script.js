@@ -1,35 +1,57 @@
-const carros = [
-    {
-        imagem: "carro.web",
-        titulo: "Nissan GT-R R35",
-        descricao: "O Nissan GT-R R35 é um ícone automotivo, conhecido por seu motor V6 biturbo de 3.8 litros e aceleração impressionante. Com tração integral e aerodinâmica refinada, ele oferece estabilidade e velocidade, sendo admirado por entusiastas e pilotos ao redor do mundo."
-    },
-    {
-        imagem: "logo.png",
-        titulo: "Ferrari LaFerrari",
-        descricao: "A Ferrari LaFerrari é um supercarro híbrido com um motor V12 de 6.3 litros combinado a um sistema elétrico, entregando uma potência de 950 cavalos. Um dos modelos mais avançados já produzidos pela Ferrari."
-    },
-    {
-        imagem: "carro3.webp",
-        titulo: "Lamborghini Aventador",
-        descricao: "O Lamborghini Aventador possui um motor V12 de 6.5 litros, design agressivo e tecnologia de ponta. Seu chassi leve e aerodinâmico oferecem potência e velocidade, tornando-se um dos supercarros mais icônicos da Lamborghini."
-    }
-];
-
+const carros = document.querySelectorAll(".carro");
 let indiceAtual = 0;
 
+const dadosCarros = [
+    { titulo: "Nissan GT-R R35", descricao: "O Nissan GT-R R35 é um dos supercarros mais icônicos da Nissan, conhecido por sua potência brutal, tecnologia avançada e desempenho impressionante. Ele foi lançado em 2007 como sucessor do lendário Skyline GT-R R34, trazendo um novo design e um motor ainda mais poderoso." },
+    { titulo: "Ferrari F8", descricao: "A Ferrari F8 Tributo tem um motor V8 biturbo de 720 cv, acelera de 0 a 100 km/h em 2,9 segundos, e atinge 340 km/h de velocidade máxima. Ela combina design aerodinâmico avançado, tecnologia de ponta, e um interior sofisticado, mantendo o legado da Ferrari com potência e inovação." },
+    { titulo: "McLaren P1", descricao: "O McLaren P1 é um hipercarro híbrido com 916 cv, alcançando 350 km/h. Seu design aerodinâmico e tecnologia avançada garantem desempenho extremo e exclusividade." }
+];
+
 function mudarCarro(direcao) {
+    const carrosContainer = document.querySelector(".carros");
+    const titulo = document.getElementById("titulo");
+    const descricao = document.getElementById("descricao");
+
+    // Movimenta os carros corretamente
+    carrosContainer.style.transition = "transform 0.5s ease-in-out";
     indiceAtual += direcao;
 
-    // Garante que o índice fique dentro dos limites da lista
-    if (indiceAtual < 0) {
-        indiceAtual = carros.length - 1;
-    } else if (indiceAtual >= carros.length) {
-        indiceAtual = 0;
-    }
+    if (indiceAtual < 0) indiceAtual = dadosCarros.length - 1;
+    if (indiceAtual >= dadosCarros.length) indiceAtual = 0;
 
-    // Atualiza a imagem, título e descrição do carro
-    document.getElementById("carro-img").src = carros[indiceAtual].imagem;
-    document.getElementById("titulo-carro").innerText = carros[indiceAtual].titulo;
-    document.getElementById("descricao-carro").innerText = carros[indiceAtual].descricao;
+    carrosContainer.style.transform = `translateX(${-indiceAtual * 100}%)`;
+
+    // Adiciona animação suave para título e descrição
+    titulo.style.opacity = "0";
+    descricao.style.opacity = "0";
+    titulo.style.transform = `translateX(${direcao * 100}px)`;
+    descricao.style.transform = `translateX(${direcao * 100}px)`;
+
+    setTimeout(() => {
+        titulo.textContent = dadosCarros[indiceAtual].titulo;
+        descricao.textContent = dadosCarros[indiceAtual].descricao;
+
+        titulo.style.opacity = "1";
+        descricao.style.opacity = "1";
+        titulo.style.transform = "translateX(0)";
+        descricao.style.transform = "translateX(0)";
+
+        // ScrollReveal aplicado ao título e descrição para entrada dinâmica
+        ScrollReveal().reveal('#titulo', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '30px',
+            easing: 'ease-in-out',
+            reset: false
+        });
+
+        ScrollReveal().reveal('#descricao', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '30px',
+            easing: 'ease-in-out',
+            reset: false
+        });
+
+    }, 300); // Atraso para manter fluidez
 }

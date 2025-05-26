@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <title>Pagina</title>
+    <title>Garagem</title>
 </head>
 
 <body>
     <header>
+
         <div class="logo">
-            <a href="">
-                <img src="logo.png" alt="logo">
-            </a>
+            <img src="logo.png" alt="logo">
         </div>
 
         <ul class="menu">
             <a href="">
-                <li>Menu</li>
+                <li>Home</li>
             </a>
             <a href="">
                 <li>Pesquisar</li>
@@ -29,36 +27,43 @@
                 <li>Sobre</li>
             </a>
             <a href="">
-                <li>Contact</li>
+                <li>Contanto</li>
             </a>
         </ul>
     </header>
 
-    <section>
-        <div class="carro">
-            <img id="carro-img" src="carro.webp" alt="Carro">
-        </div>
+    <section class="container">
+        <div class="carro-box">
+            <div class="carros">
+                <img class="carro1" src="carro.webp" alt="Carro">
+                <img class="carro2" src="ferrari.png" alt="Outro Carro">
+                <img class=" carro3" src="carro3.png" alt="Outro Carro">
+            </div>
 
-        <hr class="linha">
+            <div class=" texto">
+                <h1 id="titulo">Nissan GT-R R35</h1>
+                <p id="descricao">Motor V6 biturbo de 3.8 litros, tração integral e aerodinâmica refinada.</p>
+            </div>
+        </div>
 
         <div id="setas">
             <button class="left" onclick="mudarCarro(-1)"><i class='bx bx-chevron-left'></i></button>
             <button class="right" onclick="mudarCarro(1)"><i class='bx bx-chevron-right'></i></button>
         </div>
 
-        <div class="texto">
-            <h1 id="titulo">Nissan GT-R R35</h1>
-            <p>
-                O Nissan GT-R R35 é um ícone automotivo, conhecido por seu motor V6 biturbo de 3.8 litros e
-                aceleração<br>
-                impressionante.
-                Com tração integral e aerodinâmica refinada, ele oferece estabilidade e velocidade,<br> sendo admirado
-                por
-                entusiastas
-                e pilotos ao redor do mundo.
-            </p>
+        <div class="contato">
+            <div class="redes">
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-linkedin'></i></a>
+                <a href=""><i class='bx bxl-github'></i></a>
+                <a href=""><i class='bx bxl-discord-alt'></i></a>
+                <a href=""><i class='bx bxl-instagram'></i></a>
+            </div>
         </div>
     </section>
+
+    <hr class="linha">
+
 
     <script src="script.js"></script>
 </body>
