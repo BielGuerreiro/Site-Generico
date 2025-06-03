@@ -12,7 +12,11 @@
 }
 
 body {
-    background-color: #1f242d;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.3) 10%, transparent 40%) no-repeat,
+        radial-gradient(circle at 30% 60%, rgba(255, 255, 255, 0.2) 5%, transparent 30%) no-repeat,
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.15) 5%, transparent 30%) no-repeat,
+        linear-gradient(to bottom, rgba(30, 45, 65, 0.9) 30%, #1f242d 85%);
 }
 
 header {
@@ -202,6 +206,29 @@ header {
 .descricao-entrando {
     opacity: 1;
     transform: translateX(0);
+}
+
+.clique {
+    position: absolute;
+    display: flex;
+    top: 80%;
+    left: 83%;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #434444;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.botao:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
 }
 
 #setas {
