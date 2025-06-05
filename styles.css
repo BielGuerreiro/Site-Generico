@@ -8,15 +8,22 @@
 }
 
 :root {
-    --main-color: #D4AF37;
+    --main-color: #FF00FF;
 }
 
+
 body {
-    background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.3) 10%, transparent 40%) no-repeat,
-        radial-gradient(circle at 30% 60%, rgba(255, 255, 255, 0.2) 5%, transparent 30%) no-repeat,
-        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.15) 5%, transparent 30%) no-repeat,
-        linear-gradient(to bottom, rgba(30, 45, 65, 0.9) 30%, #1f242d 85%);
+    background-color: #08090a;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 180px, transparent 450px),
+        radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.07) 200px, transparent 470px),
+        radial-gradient(circle at 80% 25%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.09) 190px, transparent 460px),
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 170px, transparent 440px),
+        linear-gradient(to bottom, rgba(8, 9, 10, 0) 50%, #08090a 50%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
 header {
@@ -107,7 +114,7 @@ header {
     overflow: hidden;
     z-index: 2;
     left: 6.5%;
-    top: 0%;
+    top: -15%;
 }
 
 .carros {
@@ -185,13 +192,12 @@ header {
     position: absolute;
     color: var(--main-color);
     margin-top: -285px;
-    margin-left: 25px;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 #descricao {
     position: absolute;
-    left: 75%;
+    left: 72%;
     top: 70%;
     font-size: 18px;
     color: rgb(255, 255, 255);
@@ -211,7 +217,7 @@ header {
 .clique {
     position: absolute;
     display: flex;
-    top: 80%;
+    top: 65%;
     left: 83%;
 }
 
@@ -233,7 +239,7 @@ header {
 
 #setas {
     position: absolute;
-    bottom: 450px;
+    bottom: 600px;
     width: 100%;
 }
 
@@ -270,7 +276,6 @@ header {
     transform: translateY(-50%);
 }
 
-
 .linha {
     width: 80%;
     position: absolute;
@@ -291,7 +296,7 @@ header {
 .contato {
     position: relative;
     display: flex;
-    top: 40%;
+    top: 20%;
     right: 80%;
 }
 
