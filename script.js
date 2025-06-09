@@ -11,13 +11,11 @@ const dadosCarros = [
     { titulo: "Civic Type R", descricao: "O Honda Civic Type R é um dos hatchbacks esportivos mais icônicos do mundo, combinando potência, aerodinâmica refinada e tecnologia avançada. Ele é projetado para oferecer uma experiência de condução emocionante, tanto nas ruas quanto nas pistas." }
 ];
 
-// Função para trocar o carro
 function mudarCarro(direcao) {
     const carrosContainer = document.querySelector(".carros");
     const titulo = document.getElementById("titulo");
     const descricao = document.getElementById("descricao");
 
-    // Movimenta os carros corretamente
     carrosContainer.style.transition = "transform 0.5s ease-in-out";
     indiceAtual += direcao;
 
@@ -26,7 +24,6 @@ function mudarCarro(direcao) {
 
     carrosContainer.style.transform = `translateX(${-indiceAtual * 100}%)`;
 
-    // Adiciona animação suave para título e descrição
     titulo.style.opacity = "0";
     descricao.style.opacity = "0";
     titulo.style.transform = `translateX(${direcao * 100}px)`;
@@ -41,7 +38,6 @@ function mudarCarro(direcao) {
         titulo.style.transform = "translateX(0)";
         descricao.style.transform = "translateX(0)";
 
-        // ScrollReveal aplicado ao título e descrição para entrada dinâmica
         ScrollReveal().reveal('#titulo', {
             duration: 1000,
             origin: 'bottom',
@@ -58,15 +54,13 @@ function mudarCarro(direcao) {
             reset: false
         });
 
-    }, 300); // Atraso para manter fluidez
+    }, 300);
 }
 
-// Função para inicializar o título e a descrição ao carregar a página
 window.onload = function () {
     const titulo = document.getElementById("titulo");
     const descricao = document.getElementById("descricao");
 
-    // Define o primeiro carro como padrão
     titulo.textContent = dadosCarros[0].titulo;
     descricao.textContent = dadosCarros[0].descricao;
 };
