@@ -1,6 +1,7 @@
 
 <h1 align="center">
-  Confira o Site Aqui <i class='bx bxs-hand-right'></i> https://bielguerreiro.github.io/Site-Generico/
+  Confira o Site Aqui
+  <p>https://bielguerreiro.github.io/Site-Generico/</p>
 </h1>
 
 <p align="center">
